@@ -1,0 +1,29 @@
+version: '3.3'
+services:
+  api:
+    build:
+      ./api/simple-api-main/simple-api
+    networks:
+      - app-network
+    depends_on:
+      - database
+
+  database:
+    build:
+      ./database
+    networks:
+      - app-network
+    volumes:
+      - /my/own/datadir:/var/lib/postgresql/data
+  httpd:
+    build:
+      ./httpd
+    ports:
+      - 80:80
+    networks:
+      - app-network
+    depends_on:
+      - api
+
+networks:
+  app-network:
