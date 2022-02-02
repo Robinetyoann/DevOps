@@ -2,7 +2,6 @@
 
 ## Database
 
-1-1.
 docker build -t yoannrobinet/database . --> in folder tp01
 docker pull adminer
 docker network create app-network --> crait le réseau app-network pour connecter les containers 
@@ -21,7 +20,7 @@ docker build -t yoannrobinet/simple-api .
 docker run -d --network=app-network -p 8081:8080 --name api yoannrobinet/simple-api
 
 
-# HTPP
+## HTTP
 docker pull httpd
 docker build -t yoannrobinet/httpd .
 docker run -d --network=app-network -p 80:80 --name httpd yoannrobinet/httpd
@@ -41,5 +40,7 @@ add to DockerFile :
     COPY index.html /usr/local/apache2/htdocs
 rebuilt and rerun
 
-# Docker compose
+## Docker compose
 docker-compose up
+
+# TP1 
