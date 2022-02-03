@@ -25,5 +25,15 @@ services:
     depends_on:
       - api
 
+  front:
+    container_name: 
+      front
+    build:
+      ./front
+    networks:
+      - app-network
+    depends_on:
+      - api
+
 networks:
   app-network:

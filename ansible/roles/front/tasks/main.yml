@@ -1,0 +1,8 @@
+---
+# tasks file for ansible/roles/front
+- name: Lauch Front
+  docker_container:
+    name: front
+    image: yoannrobinet/front
+    networks:
+      - name : backNet
