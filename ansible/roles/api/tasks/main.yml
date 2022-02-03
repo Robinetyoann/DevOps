@@ -4,8 +4,6 @@
   docker_container:
     name: api
     image: yoannrobinet/tp-devops-cpe-api
-    exposed_ports: 
-      - 80:80
     state: started
     networks:
       - name: backNet
