@@ -1,0 +1,13 @@
+---
+# tasks file for roles/database
+- name: Lauch database
+  docker_container:
+    name: database
+    image: yoannrobinet/tp-devops-cpe-database
+    state: started
+    env:
+      POSTGRES_DB: db
+      POSTGRES_USR: usr
+      POSTGRES_PASSWORD: pwd
+    networks:
+      - name: backNet

@@ -1,0 +1,6 @@
+---
+# tasks file for roles/network
+- name: Create network backNet
+  docker_network:
+    name: backNet
+

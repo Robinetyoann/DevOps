@@ -1,0 +1,10 @@
+---
+# tasks file for roles/proxy
+- name: Run httpd
+  docker_container:
+    name: httpd
+    image: yoannrobinet/tp-devops-cpe-httpd
+    ports: 80:80
+    state: started
+    networks:
+      - name: backNet
