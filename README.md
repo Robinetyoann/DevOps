@@ -17,6 +17,7 @@ docker pull adminer
 Database
 ```console
 docker run -d -e POSTGRES_PASSWORD=pwd -v /my/own/datadir:/var/lib/postgresql/data --network=app-network --name database yoannrobinet/database
+```
 Adminer
 ```console
 docker run --network=app-network -p 8080:8080 --name clientSQL adminer
